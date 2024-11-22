@@ -11,8 +11,10 @@ import com.example.futportuguese.model.Jogos
 
 class ListaDeJogosAdapter(
     private val context: Context,
-    private val jogos: List<Jogos>
+    jogos: List<Jogos>
 ) : RecyclerView.Adapter<ListaDeJogosAdapter.ViewHolder>() {
+
+    private val jogos = jogos.toMutableList()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -45,5 +47,10 @@ class ListaDeJogosAdapter(
     }
 
     override fun getItemCount(): Int = jogos.size
+    fun atualiza(jogos: List<Jogos>) {
+        this.jogos.clear()
+        this.jogos.addAll(jogos)
+        notifyDataSetChanged()
+    }
 
 }

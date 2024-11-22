@@ -13,12 +13,15 @@ import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class ListaJogosActivity : AppCompatActivity(R.layout.activity_lista_de_jogos) {
+    private val dao = JogosDao()
+    private val adapter = ListaDeJogosAdapter(context = this, jogos = dao.buscaTodos())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
+        configuraRecyclerView()
+        configuraFab()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -27,15 +30,23 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
     override fun onResume() {
         super.onResume()
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val dao = JogosDao()
-        recyclerView.adapter = ListaDeJogosAdapter(
-            context = this, jogos = dao.buscaTodos()
-        )
+        adapter.atualiza(dao.buscaTodos())
+    }
+
+    private fun configuraFab() {
         val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         fab.setOnClickListener {
-            val intent = Intent(this, FormularioJogosActivity::class.java)
-            startActivity(intent)
+            vaiParaFormularioJogos()
         }
+    }
+
+    private fun vaiParaFormularioJogos() {
+        val intent = Intent(this, FormularioJogosActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun configuraRecyclerView() {
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        recyclerView.adapter = adapter
     }
 }
