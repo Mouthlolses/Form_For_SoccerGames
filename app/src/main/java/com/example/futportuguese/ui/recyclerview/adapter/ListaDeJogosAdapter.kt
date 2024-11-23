@@ -19,17 +19,17 @@ class ListaDeJogosAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun vincula(jogos: Jogos) {
-            val nomeDoOrganizador = itemView.findViewById<TextView>(R.id.nomeDoOrganizador)
+            val nomeDoOrganizador = itemView.findViewById<TextView>(R.id.jogo_item_nomeDoOrganizador)
             nomeDoOrganizador.text = jogos.nomeDoOrganizador
-            val numeroParaContato = itemView.findViewById<TextView>(R.id.numeroParaContato)
+            val numeroParaContato = itemView.findViewById<TextView>(R.id.jogo_item_numeroParaContato)
             numeroParaContato.text = jogos.numeroParaContato
-            val diaDoJogo = itemView.findViewById<TextView>(R.id.diaDoJogo)
+            val diaDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_diaDoJogo)
             diaDoJogo.text = jogos.diaDaSemana
-            val horarioDoJogo = itemView.findViewById<TextView>(R.id.horarioDoInicioDoJogo)
+            val horarioDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_horarioDoInicioDoJogo)
             horarioDoJogo.text = jogos.horarioDoInicioDoJogo
-            val horarioDoFimDoJogo = itemView.findViewById<TextView>(R.id.horarioDeFimDoJogo)
+            val horarioDoFimDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_horarioDeFimDoJogo)
             horarioDoFimDoJogo.text = jogos.horarioDoFimDoJogo
-            val valorDoJogo = itemView.findViewById<TextView>(R.id.valorParaPagar)
+            val valorDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_valorParaPagar)
             valorDoJogo.text = jogos.valorDoJogo.toPlainString()
 
         }

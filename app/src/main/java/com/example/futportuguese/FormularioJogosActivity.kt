@@ -1,7 +1,6 @@
 package com.example.futportuguese
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
@@ -21,40 +20,45 @@ class FormularioJogosActivity : AppCompatActivity(R.layout.activity_formulario_j
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val botaoSalvar = findViewById<Button>(R.id.botaoSalvar)
+        configuraBotaoSalvar()
+    }
+
+    private fun configuraBotaoSalvar() {
+        val botaoSalvar = findViewById<Button>(R.id.activity_formulario_jogo_botaoSalvar)
         botaoSalvar.setOnClickListener {
-            val campoNomeDoOrganizador = findViewById<EditText>(R.id.nomeDoOrganizador)
-            val nomeDoOrganizador = campoNomeDoOrganizador.text.toString()
-            val campoNumeroParaContato = findViewById<EditText>(R.id.numeroParaContato)
-            val numeroParaContato = campoNumeroParaContato.text.toString()
-            val campoDataDoJogo = findViewById<EditText>(R.id.diaDojogo)
-            val dataDoJogo = campoDataDoJogo.text.toString()
-            val campoHorarioDeInicioDoJogo = findViewById<EditText>(R.id.horarioDoInicioDoJogo)
-            val horarioDeInicioDoJogo = campoHorarioDeInicioDoJogo.text.toString()
-            val campoHorarioDeTerminoDoJogo = findViewById<EditText>(R.id.horarioDeFimDoJogo)
-            val horarioDoFimDoJogo = campoHorarioDeTerminoDoJogo.text.toString()
-            val campoValor = findViewById<EditText>(R.id.valorAPagar)
-            val valorAPagarEmTexto = campoValor.text.toString()
-            val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
-                BigDecimal.ZERO
-            } else {
-                BigDecimal(valorAPagarEmTexto)
-            }
-
-
-            val jogoCriado = Jogos(
-                nomeDoOrganizador = nomeDoOrganizador,
-                numeroParaContato = numeroParaContato,
-                diaDaSemana = dataDoJogo,
-                horarioDoInicioDoJogo = horarioDeInicioDoJogo,
-                horarioDoFimDoJogo = horarioDoFimDoJogo,
-                valorDoJogo = valorAPagar
-            )
-            Log.i("Formulario", "onCreate: $jogoCriado")
+            val jogoCriado = criaProduto()
             val dao = JogosDao()
             dao.adiciona(jogoCriado)
-            Log.i("Formulario", "onCreate: ${dao.buscaTodos()}")
             finish()
         }
+    }
+
+    private fun criaProduto(): Jogos {
+        val campoNomeDoOrganizador = findViewById<EditText>(R.id.activity_formulario_jogo_nomeDoOrganizador)
+        val nomeDoOrganizador = campoNomeDoOrganizador.text.toString()
+        val campoNumeroParaContato = findViewById<EditText>(R.id.activity_formulario_jogo_numeroParaContato)
+        val numeroParaContato = campoNumeroParaContato.text.toString()
+        val campoDataDoJogo = findViewById<EditText>(R.id.activity_formulario_jogo_diaDojogo)
+        val dataDoJogo = campoDataDoJogo.text.toString()
+        val campoHorarioDeInicioDoJogo = findViewById<EditText>(R.id.activity_formulario_jogo_horarioDoInicioDoJogo)
+        val horarioDeInicioDoJogo = campoHorarioDeInicioDoJogo.text.toString()
+        val campoHorarioDeTerminoDoJogo = findViewById<EditText>(R.id.acitivity_formulario_jogo_horarioDeFimDoJogo)
+        val horarioDoFimDoJogo = campoHorarioDeTerminoDoJogo.text.toString()
+        val campoValor = findViewById<EditText>(R.id.activity_formulario_jogo_valorAPagar)
+        val valorAPagarEmTexto = campoValor.text.toString()
+        val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
+            BigDecimal.ZERO
+        } else {
+            BigDecimal(valorAPagarEmTexto)
+        }
+
+       return Jogos (
+            nomeDoOrganizador = nomeDoOrganizador,
+            numeroParaContato = numeroParaContato,
+            diaDaSemana = dataDoJogo,
+            horarioDoInicioDoJogo = horarioDeInicioDoJogo,
+            horarioDoFimDoJogo = horarioDoFimDoJogo,
+            valorDoJogo = valorAPagar
+        )
     }
 }

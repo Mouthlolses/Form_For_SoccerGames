@@ -13,76 +13,99 @@
         tools:context=".FormularioJogosActivity">
 
         <EditText
-            android:id="@+id/nomeDoOrganizador"
+            android:id="@+id/activity_formulario_jogo_nomeDoOrganizador"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginTop="48dp"
             android:hint="Nome do Organizador"
+            android:fontFamily="monospace"
             android:inputType="text"
+            android:textColorHint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/numeroParaContato"
+            android:id="@+id/activity_formulario_jogo_numeroParaContato"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Número Para Contato"
+            android:fontFamily="monospace"
+            android:textColorHint="#FF5722"
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nomeDoOrganizador" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_nomeDoOrganizador" />
 
         <EditText
-            android:id="@+id/diaDojogo"
+            android:id="@+id/activity_formulario_jogo_diaDojogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Data do Jogo"
             android:inputType="text"
+            android:fontFamily="monospace"
+            android:textColorHint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numeroParaContato" />
-
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_numeroParaContato" />
 
         <EditText
-            android:id="@+id/horarioDoInicioDoJogo"
+            android:id="@+id/activity_formulario_jogo_horarioDoInicioDoJogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Hórario de Início do Jogo"
             android:inputType="time"
+            android:fontFamily="monospace"
+            android:textColorHint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/diaDojogo" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_diaDojogo"/>
 
         <EditText
-            android:id="@+id/horarioDeFimDoJogo"
+            android:id="@+id/acitivity_formulario_jogo_horarioDeFimDoJogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Hórario de Término do Jogo"
             android:inputType="time"
+            android:fontFamily="monospace"
+            android:textColorHint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horarioDoInicioDoJogo" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_horarioDoInicioDoJogo" />
 
         <EditText
-            android:id="@+id/valorAPagar"
+            android:id="@+id/activity_formulario_jogo_valorAPagar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="Valor a Pagar"
             android:inputType="numberDecimal"
+            android:fontFamily="monospace"
+            android:textColorHint="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horarioDeFimDoJogo" />
+            app:layout_constraintTop_toBottomOf="@+id/acitivity_formulario_jogo_horarioDeFimDoJogo" />
+
+        <ImageView
+            android:layout_width="378dp"
+            android:layout_height="263dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s"
+            app:layout_constraintBottom_toTopOf="@+id/activity_formulario_jogo_botaoSalvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_valorAPagar"
+            app:layout_constraintVertical_bias="0.571" />
 
         <Button
-            android:id="@+id/botaoSalvar"
+            android:id="@+id/activity_formulario_jogo_botaoSalvar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
@@ -90,7 +113,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/valorAPagar"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_valorAPagar"
             app:layout_constraintVertical_bias="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

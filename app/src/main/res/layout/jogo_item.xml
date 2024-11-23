@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/nomeDoOrganizador"
+        android:id="@+id/jogo_item_nomeDoOrganizador"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -18,7 +18,7 @@
         tools:text="Nome do Organizador" />
 
     <TextView
-        android:id="@+id/numeroParaContato"
+        android:id="@+id/jogo_item_numeroParaContato"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -27,11 +27,11 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nomeDoOrganizador"
+        app:layout_constraintTop_toBottomOf="@id/jogo_item_nomeDoOrganizador"
         tools:text="Número Para Contato" />
 
     <TextView
-        android:id="@+id/diaDoJogo"
+        android:id="@+id/jogo_item_diaDoJogo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -40,11 +40,11 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numeroParaContato"
+        app:layout_constraintTop_toBottomOf="@id/jogo_item_numeroParaContato"
         tools:text="Data do Jogo"/>
 
     <TextView
-        android:id="@+id/horarioDoInicioDoJogo"
+        android:id="@+id/jogo_item_horarioDoInicioDoJogo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -53,12 +53,12 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/diaDoJogo"
+        app:layout_constraintTop_toBottomOf="@id/jogo_item_diaDoJogo"
         tools:text="Horário de Início do Jogo" />
 
 
     <TextView
-        android:id="@+id/horarioDeFimDoJogo"
+        android:id="@+id/jogo_item_horarioDeFimDoJogo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -67,11 +67,11 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horarioDoInicioDoJogo"
+        app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDoInicioDoJogo"
         tools:text="Horário de Término do Jogo" />
 
     <TextView
-        android:id="@+id/valorParaPagar"
+        android:id="@+id/jogo_item_valorParaPagar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -80,7 +80,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horarioDeFimDoJogo"
+        app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDeFimDoJogo"
         tools:text="Valor A Pagar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

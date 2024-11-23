@@ -34,7 +34,7 @@ class ListaJogosActivity : AppCompatActivity(R.layout.activity_lista_de_jogos) {
     }
 
     private fun configuraFab() {
-        val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        val fab = findViewById<FloatingActionButton>(R.id.activity_lista_jogos_fab)
         fab.setOnClickListener {
             vaiParaFormularioJogos()
         }
@@ -46,7 +46,7 @@ class ListaJogosActivity : AppCompatActivity(R.layout.activity_lista_de_jogos) {
     }
 
     private fun configuraRecyclerView() {
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val recyclerView = findViewById<RecyclerView>(R.id.activity_lista_jogos_recyclerview)
         recyclerView.adapter = adapter
     }
 }
