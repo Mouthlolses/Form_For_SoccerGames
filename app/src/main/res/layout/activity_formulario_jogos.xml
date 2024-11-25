@@ -92,18 +92,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/acitivity_formulario_jogo_horarioDeFimDoJogo" />
 
-        <ImageView
-            android:layout_width="378dp"
-            android:layout_height="263dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s"
-            app:layout_constraintBottom_toTopOf="@+id/activity_formulario_jogo_botaoSalvar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.484"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_valorAPagar"
-            app:layout_constraintVertical_bias="0.571" />
-
         <Button
             android:id="@+id/activity_formulario_jogo_botaoSalvar"
             android:layout_width="0dp"
