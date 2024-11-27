@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">futPortuguese</string>
+    <string name="valorAPaga">Valor</string>
+    <string name="Salvar">Salvar</string>
 </resources>
