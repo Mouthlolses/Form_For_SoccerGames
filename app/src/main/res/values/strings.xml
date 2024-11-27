@@ -2,4 +2,10 @@
     <string name="app_name">futPortuguese</string>
     <string name="valorAPaga">Valor</string>
     <string name="Salvar">Salvar</string>
+    <string name="listadejogos">listaDeJogos</string>
+    <string name="horario_de_termino_do_jogo">Hórario de Término do Jogo</string>
+    <string name="horario_de_inicio_do_jogo">Hórario de Início do Jogo</string>
+    <string name="data_do_jogo">Data do Jogo</string>
+    <string name="numero_para_contato">Número Para Contato</string>
+    <string name="nome_do_organizador">Nome do Organizador</string>
 </resources>
