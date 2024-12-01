@@ -13,13 +13,14 @@ import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListaJogosActivity : AppCompatActivity(R.layout.activity_lista_de_jogos) {
+class ListaJogosActivity : AppCompatActivity() {
     private val dao = JogosDao()
     private val adapter = ListaDeJogosAdapter(context = this, jogos = dao.buscaTodos())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setContentView(R.layout.activity_lista_de_jogos)
         configuraRecyclerView()
         configuraFab()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
