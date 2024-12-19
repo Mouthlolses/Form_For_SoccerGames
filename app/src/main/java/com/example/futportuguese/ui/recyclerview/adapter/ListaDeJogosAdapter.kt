@@ -2,11 +2,9 @@ package com.example.futportuguese.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.futportuguese.R
+import com.example.futportuguese.databinding.JogoItemBinding
 import com.example.futportuguese.model.Jogos
 
 class ListaDeJogosAdapter(
@@ -16,29 +14,21 @@ class ListaDeJogosAdapter(
 
     private val jogos = jogos.toMutableList()
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(private val binding: JogoItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun vincula(jogos: Jogos) {
-            val nomeDoOrganizador = itemView.findViewById<TextView>(R.id.jogo_item_nomeDoOrganizador)
-            nomeDoOrganizador.text = jogos.nomeDoOrganizador
-            val numeroParaContato = itemView.findViewById<TextView>(R.id.jogo_item_numeroParaContato)
-            numeroParaContato.text = jogos.numeroParaContato
-            val diaDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_diaDoJogo)
-            diaDoJogo.text = jogos.diaDaSemana
-            val horarioDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_horarioDoInicioDoJogo)
-            horarioDoJogo.text = jogos.horarioDoInicioDoJogo
-            val horarioDoFimDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_horarioDeFimDoJogo)
-            horarioDoFimDoJogo.text = jogos.horarioDoFimDoJogo
-            val valorDoJogo = itemView.findViewById<TextView>(R.id.jogo_item_valorParaPagar)
-            valorDoJogo.text = jogos.valorDoJogo.toPlainString()
-
+            binding.jogoItemNomeDoOrganizador.text = jogos.nomeDoOrganizador
+            binding.jogoItemNumeroParaContato.text = jogos.numeroParaContato
+            binding.jogoItemDiaDoJogo.text = jogos.diaDaSemana
+            binding.jogoItemHorarioDoInicioDoJogo.text = jogos.horarioDoInicioDoJogo
+            binding.jogoItemHorarioDeFimDoJogo.text = jogos.horarioDoFimDoJogo
+            binding.jogoItemValorParaPagar.text = jogos.valorDoJogo.toPlainString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.jogo_item, parent, false)
-        return ViewHolder(view)
+        val binding = JogoItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -47,10 +37,10 @@ class ListaDeJogosAdapter(
     }
 
     override fun getItemCount(): Int = jogos.size
+
     fun atualiza(jogos: List<Jogos>) {
         this.jogos.clear()
         this.jogos.addAll(jogos)
         notifyDataSetChanged()
     }
-
 }
