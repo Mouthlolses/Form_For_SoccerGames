@@ -1,87 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="30dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
 
-    <TextView
-        android:id="@+id/jogo_item_nomeDoOrganizador"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nome do Organizador" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/jogo_item_numeroParaContato"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jogo_item_nomeDoOrganizador"
-        tools:text="Número Para Contato" />
+        <TextView
+            android:id="@+id/jogo_item_nomeDoOrganizador"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_bold"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem/random" />
 
-    <TextView
-        android:id="@+id/jogo_item_diaDoJogo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jogo_item_numeroParaContato"
-        tools:text="Data do Jogo"/>
+        <TextView
+            android:id="@+id/jogo_item_numeroParaContato"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintStart_toStartOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintTop_toBottomOf="@id/jogo_item_nomeDoOrganizador"
+            tools:text="@tools:sample/lorem/random" />
 
-    <TextView
-        android:id="@+id/jogo_item_horarioDoInicioDoJogo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jogo_item_diaDoJogo"
-        tools:text="Horário de Início do Jogo" />
+        <TextView
+            android:id="@+id/jogo_item_diaDoJogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintStart_toStartOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintTop_toBottomOf="@id/jogo_item_numeroParaContato"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/jogo_item_horarioDoInicioDoJogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintStart_toStartOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintTop_toBottomOf="@id/jogo_item_diaDoJogo"
+            tools:text="@tools:sample/lorem/random" />
 
 
-    <TextView
-        android:id="@+id/jogo_item_horarioDeFimDoJogo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDoInicioDoJogo"
-        tools:text="Horário de Término do Jogo" />
+        <TextView
+            android:id="@+id/jogo_item_horarioDeFimDoJogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintStart_toStartOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDoInicioDoJogo"
+            tools:text="@tools:sample/lorem/random" />
 
-    <TextView
-        android:id="@+id/jogo_item_valorParaPagar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDeFimDoJogo"
-        tools:text="Valor A Pagar" />
+        <TextView
+            android:id="@+id/jogo_item_valorParaPagar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#FF5722"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintStart_toStartOf="@id/jogo_item_nomeDoOrganizador"
+            app:layout_constraintTop_toBottomOf="@id/jogo_item_horarioDeFimDoJogo"
+            tools:text="R$ 19,00" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/foto_do_campo"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

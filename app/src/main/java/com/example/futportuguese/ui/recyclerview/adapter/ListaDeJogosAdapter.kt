@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.futportuguese.databinding.JogoItemBinding
 import com.example.futportuguese.model.Jogos
+import java.math.BigDecimal
+import java.text.NumberFormat
+import java.util.Locale
 
 class ListaDeJogosAdapter(
     private val context: Context,
@@ -23,6 +26,15 @@ class ListaDeJogosAdapter(
             binding.jogoItemHorarioDoInicioDoJogo.text = jogos.horarioDoInicioDoJogo
             binding.jogoItemHorarioDeFimDoJogo.text = jogos.horarioDoFimDoJogo
             binding.jogoItemValorParaPagar.text = jogos.valorDoJogo.toPlainString()
+            val valorEmMoeda: String = formataParaMoedaBrasileira(jogos.valorDoJogo)
+            binding.jogoItemValorParaPagar.text = valorEmMoeda
+        }
+
+        private fun formataParaMoedaBrasileira(jogos: BigDecimal): String {
+            val formatador: NumberFormat = NumberFormat
+                .getCurrencyInstance(Locale("pt", "br"))
+            val valorEmMoeda: String = formatador.format(jogos)
+            return valorEmMoeda
         }
     }
 
@@ -44,3 +56,11 @@ class ListaDeJogosAdapter(
         notifyDataSetChanged()
     }
 }
+
+
+
+/*
+ o Adapter é uma classe que serve para conectar dados de uma fonte,
+ como uma lista ou banco de dados, com um componente de interface do usuário,
+ como uma RecyclerView ou ListView. Ele basicamente "adapta" os dados para um formato que a visualização possa exibir.
+ */
