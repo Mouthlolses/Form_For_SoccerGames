@@ -12,103 +12,123 @@
         android:layout_height="wrap_content"
         tools:context=".FormularioJogosActivity">
 
-        <EditText
-            android:id="@+id/activity_formulario_jogo_nomeDoOrganizador"
+        <ImageView
+            android:id="@+id/activity_formulario_jogo_imagem"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_marginTop="48dp"
-            android:minHeight="48dp"
-            android:hint="@string/nome_do_organizador"
-            android:autofillHints="name"
-            android:fontFamily="sans-serif"
-            android:inputType="text"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/foto_do_campo" />
 
-        <EditText
-            android:id="@+id/activity_formulario_jogo_numeroParaContato"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_nomeDoOrganizador"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:minHeight="48dp"
-            android:hint="@string/numero_para_contato"
-            android:autofillHints="phone"
-            android:fontFamily="sans-serif"
-            android:inputType="phone"
+            android:layout_margin="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_nomeDoOrganizador" />
+            app:layout_constraintTop_toBottomOf="@id/activity_formulario_jogo_imagem"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
-            android:id="@+id/activity_formulario_jogo_diaDojogo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:minHeight="48dp"
-            android:hint="@string/data_do_jogo"
-            android:autofillHints="date"
-            android:inputType="text"
-            android:fontFamily="sans-serif"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_numeroParaContato" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome do Organizador" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/activity_formulario_jogo_horarioDoInicioDoJogo"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_numeroParaContato"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:minHeight="48dp"
-            android:hint="@string/horario_de_inicio_do_jogo"
-            android:autofillHints="time"
-            android:inputType="time"
-            android:fontFamily="sans-serif"
+            android:layout_margin="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_diaDojogo"/>
+            app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_nomeDoOrganizador"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
-            android:id="@+id/acitivity_formulario_jogo_horarioDeFimDoJogo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:minHeight="48dp"
-            android:hint="@string/horario_de_termino_do_jogo"
-            android:autofillHints="time"
-            android:inputType="time"
-            android:fontFamily="sans-serif"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_horarioDoInicioDoJogo" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Número Para Contato" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/activity_formulario_jogo_valorAPagar"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_dataDoJogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:minHeight="48dp"
-            android:fontFamily="sans-serif"
-            android:hint="@string/valorAPaga"
-            android:autofillHints="payment"
-            android:inputType="numberDecimal"
+            android:layout_margin="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/acitivity_formulario_jogo_horarioDeFimDoJogo" />
+            app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_numeroParaContato"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Data do Jogo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_horarioDeInicioDoJogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_dataDoJogo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Horário de Inicio do Jogo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_horarioDeTerminoDoJogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_horarioDeInicioDoJogo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Horário de Término do Jogo" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_jogo_textinputlayout_valorAPagar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_horarioDeTerminoDoJogo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Valor a Pagar" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/activity_formulario_jogo_botaoSalvar"
             android:layout_width="277dp"
-            android:layout_height="53dp"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="@string/Salvar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_jogo_valorAPagar"
+            app:layout_constraintTop_toBottomOf="@+id/formulario_jogo_textinputlayout_valorAPagar"
             app:layout_constraintVertical_bias="0.965" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

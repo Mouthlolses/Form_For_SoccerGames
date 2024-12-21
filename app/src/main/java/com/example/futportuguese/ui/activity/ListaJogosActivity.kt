@@ -1,8 +1,10 @@
 package com.example.futportuguese.ui.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -24,6 +26,16 @@ class ListaJogosActivity : AppCompatActivity() {
         enableEdgeToEdge()
         configuraRecyclerView()
         configuraFab()
+        AlertDialog.Builder(this)
+            .setTitle("Configura?")
+            .setMessage("Olá Mundo!")
+            .setPositiveButton("Confirmar") { _, _ ->
+
+            }
+            .setNegativeButton("Cancelar") {_, _ ->
+
+            }
+            .show()
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

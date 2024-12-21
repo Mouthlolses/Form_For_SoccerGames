@@ -39,12 +39,12 @@ class FormularioJogosActivity : AppCompatActivity() {
     }
 
     private fun criaProduto(): Jogos {
-        val nomeDoOrganizador = binding.activityFormularioJogoNomeDoOrganizador.text.toString()
-        val numeroParaContato = binding.activityFormularioJogoNumeroParaContato.text.toString()
-        val dataDoJogo = binding.activityFormularioJogoDiaDojogo.text.toString()
-        val horarioDeInicioDoJogo = binding.activityFormularioJogoHorarioDoInicioDoJogo.text.toString()
-        val horarioDoFimDoJogo = binding.acitivityFormularioJogoHorarioDeFimDoJogo.text.toString()
-        val valorAPagarEmTexto = binding.activityFormularioJogoValorAPagar.text.toString()
+        val nomeDoOrganizador = binding.formularioJogoTextinputlayoutNomeDoOrganizador.editText?.text.toString()
+        val numeroParaContato = binding.formularioJogoTextinputlayoutNumeroParaContato.editText?.text.toString()
+        val dataDoJogo = binding.formularioJogoTextinputlayoutDataDoJogo.editText?.text.toString()
+        val horarioDeInicioDoJogo = binding.formularioJogoTextinputlayoutHorarioDeInicioDoJogo.editText?.text.toString()
+        val horarioDoFimDoJogo = binding.formularioJogoTextinputlayoutHorarioDeTerminoDoJogo.editText?.text.toString()
+        val valorAPagarEmTexto = binding.formularioJogoTextinputlayoutValorAPagar.editText?.text.toString()
         val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
             BigDecimal.ZERO
         } else {
