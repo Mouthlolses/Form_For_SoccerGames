@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.futportuguese.FormularioJogosActivity
+import com.example.futportuguese.R
 import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.databinding.ActivityListaDeJogosBinding
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter
@@ -26,16 +27,6 @@ class ListaJogosActivity : AppCompatActivity() {
         enableEdgeToEdge()
         configuraRecyclerView()
         configuraFab()
-        AlertDialog.Builder(this)
-            .setTitle("Configura?")
-            .setMessage("Olá Mundo!")
-            .setPositiveButton("Confirmar") { _, _ ->
-
-            }
-            .setNegativeButton("Cancelar") {_, _ ->
-
-            }
-            .show()
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

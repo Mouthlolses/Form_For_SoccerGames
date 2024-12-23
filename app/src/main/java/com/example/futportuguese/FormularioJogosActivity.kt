@@ -2,6 +2,7 @@ package com.example.futportuguese
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,6 +19,17 @@ class FormularioJogosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFormularioJogosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.activityFormularioJogoImagem.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setView(R.layout.formulario_imagem)
+                .setPositiveButton("Confirmar") { _, _ ->
+
+                }
+                .setNegativeButton("Cancelar") { _, _ ->
+
+                }
+                .show()
+        }
 
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
