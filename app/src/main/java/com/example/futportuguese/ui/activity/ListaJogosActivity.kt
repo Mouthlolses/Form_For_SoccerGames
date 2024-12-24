@@ -1,15 +1,12 @@
 package com.example.futportuguese.ui.activity
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.futportuguese.FormularioJogosActivity
-import com.example.futportuguese.R
 import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.databinding.ActivityListaDeJogosBinding
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter

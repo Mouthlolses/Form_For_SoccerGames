@@ -8,5 +8,6 @@ data class Jogos(
     val diaDaSemana: String,
     val horarioDoInicioDoJogo: String,
     val horarioDoFimDoJogo: String,
-    val valorDoJogo: BigDecimal
+    val valorDoJogo: BigDecimal,
+    val imagem: String? = null
 )

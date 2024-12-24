@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil3.load
 import com.example.futportuguese.databinding.JogoItemBinding
 import com.example.futportuguese.model.Jogos
 import java.math.BigDecimal
@@ -28,6 +29,7 @@ class ListaDeJogosAdapter(
             binding.jogoItemValorParaPagar.text = jogos.valorDoJogo.toPlainString()
             val valorEmMoeda: String = formataParaMoedaBrasileira(jogos.valorDoJogo)
             binding.jogoItemValorParaPagar.text = valorEmMoeda
+            binding.imageView.load(jogos.imagem)
         }
 
         private fun formataParaMoedaBrasileira(jogos: BigDecimal): String {

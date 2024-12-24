@@ -6,8 +6,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import coil3.load
 import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.databinding.ActivityFormularioJogosBinding
+import com.example.futportuguese.databinding.FormularioImagemBinding
 import com.example.futportuguese.model.Jogos
 import java.math.BigDecimal
 
@@ -15,15 +17,23 @@ import java.math.BigDecimal
 class FormularioJogosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormularioJogosBinding
 
+    private var url: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormularioJogosBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.activityFormularioJogoImagem.setOnClickListener {
+           val bindingFormularioImagem = FormularioImagemBinding.inflate(layoutInflater)
+            bindingFormularioImagem.formularioImagemBotaoCarregar.setOnClickListener{
+               val url = bindingFormularioImagem.formularioImagemUrl.text.toString()
+                bindingFormularioImagem.formularioImagemImageview.load(url)
+            }
             AlertDialog.Builder(this)
-                .setView(R.layout.formulario_imagem)
+                .setView(bindingFormularioImagem.root)
                 .setPositiveButton("Confirmar") { _, _ ->
-
+                    url = bindingFormularioImagem.formularioImagemUrl.text.toString()
+                    binding.activityFormularioJogoImagem.load(url)
                 }
                 .setNegativeButton("Cancelar") { _, _ ->
 
@@ -69,7 +79,8 @@ class FormularioJogosActivity : AppCompatActivity() {
             diaDaSemana = dataDoJogo,
             horarioDoInicioDoJogo = horarioDeInicioDoJogo,
             horarioDoFimDoJogo = horarioDoFimDoJogo,
-            valorDoJogo = valorAPagar
+            valorDoJogo = valorAPagar,
+            imagem = url
         )
     }
 }
