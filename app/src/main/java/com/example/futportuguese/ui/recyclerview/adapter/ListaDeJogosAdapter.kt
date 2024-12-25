@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil3.load
+import coil3.request.fallback
+import coil3.request.error
+import com.example.futportuguese.R
 import com.example.futportuguese.databinding.JogoItemBinding
 import com.example.futportuguese.model.Jogos
 import java.math.BigDecimal
@@ -29,7 +32,12 @@ class ListaDeJogosAdapter(
             binding.jogoItemValorParaPagar.text = jogos.valorDoJogo.toPlainString()
             val valorEmMoeda: String = formataParaMoedaBrasileira(jogos.valorDoJogo)
             binding.jogoItemValorParaPagar.text = valorEmMoeda
-            binding.imageView.load(jogos.imagem)
+
+
+            binding.imageView.load("jogos.imagem") {
+                fallback(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol)
+                error(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s)
+            }
         }
 
         private fun formataParaMoedaBrasileira(jogos: BigDecimal): String {
