@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import coil3.load
+import coil3.request.placeholder
 import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.databinding.ActivityFormularioJogosBinding
 import com.example.futportuguese.databinding.FormularioImagemBinding
+import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
 import java.math.BigDecimal
 
@@ -27,13 +29,14 @@ class FormularioJogosActivity : AppCompatActivity() {
            val bindingFormularioImagem = FormularioImagemBinding.inflate(layoutInflater)
             bindingFormularioImagem.formularioImagemBotaoCarregar.setOnClickListener{
                val url = bindingFormularioImagem.formularioImagemUrl.text.toString()
-                bindingFormularioImagem.formularioImagemImageview.load(url)
+                bindingFormularioImagem.formularioImagemImageview.tentaCarregarImagem(url)
             }
+
             AlertDialog.Builder(this)
                 .setView(bindingFormularioImagem.root)
                 .setPositiveButton("Confirmar") { _, _ ->
                     url = bindingFormularioImagem.formularioImagemUrl.text.toString()
-                    binding.activityFormularioJogoImagem.load(url)
+                    binding.activityFormularioJogoImagem.tentaCarregarImagem(url)
                 }
                 .setNegativeButton("Cancelar") { _, _ ->
 

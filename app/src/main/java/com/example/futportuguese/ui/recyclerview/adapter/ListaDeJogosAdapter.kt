@@ -2,13 +2,16 @@ package com.example.futportuguese.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil3.load
 import coil3.request.fallback
 import coil3.request.error
+import coil3.request.placeholder
 import com.example.futportuguese.R
 import com.example.futportuguese.databinding.JogoItemBinding
+import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
 import java.math.BigDecimal
 import java.text.NumberFormat
@@ -34,10 +37,16 @@ class ListaDeJogosAdapter(
             binding.jogoItemValorParaPagar.text = valorEmMoeda
 
 
-            binding.imageView.load("jogos.imagem") {
-                fallback(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol)
-                error(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s)
+            /* val visibilidade = if(jogos.imagem != null) {     *Outro meio de implmentar o "Error" da imagem*
+                View.VISIBLE
+            } else {
+                View.INVISIBLE
             }
+            binding.imageView.visibility = visibilidade
+            */
+
+
+            binding.imageView.tentaCarregarImagem(jogos.imagem)
         }
 
         private fun formataParaMoedaBrasileira(jogos: BigDecimal): String {
