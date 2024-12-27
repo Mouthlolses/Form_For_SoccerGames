@@ -2,7 +2,6 @@ package com.example.futportuguese.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -10,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.futportuguese.FormularioJogosActivity
 import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.databinding.ActivityListaDeJogosBinding
-import com.example.futportuguese.ui.dialog.FormularioImagemDialog
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter
 
 class ListaJogosActivity : AppCompatActivity() {
@@ -22,13 +20,9 @@ class ListaJogosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListaDeJogosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         enableEdgeToEdge()
         configuraRecyclerView()
         configuraFab()
-        FormularioImagemDialog(this).mostra { imagem ->
-            Log.i("ListaProdutosActivity", "onCreate: $imagem")
-        }
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

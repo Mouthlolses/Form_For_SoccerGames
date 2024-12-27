@@ -24,7 +24,7 @@ class FormularioJogosActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.activityFormularioJogoImagem.setOnClickListener {
             FormularioImagemDialog(this)
-                .mostra{ imagem ->
+                .mostra(url) { imagem ->
                     url = imagem
                     binding.activityFormularioJogoImagem.tentaCarregarImagem(url)
                 }
