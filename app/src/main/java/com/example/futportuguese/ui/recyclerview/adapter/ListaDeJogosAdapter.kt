@@ -2,14 +2,8 @@ package com.example.futportuguese.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil3.load
-import coil3.request.fallback
-import coil3.request.error
-import coil3.request.placeholder
-import com.example.futportuguese.R
 import com.example.futportuguese.databinding.JogoItemBinding
 import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
