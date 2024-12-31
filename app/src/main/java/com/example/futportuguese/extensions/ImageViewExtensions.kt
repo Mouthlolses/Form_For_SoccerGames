@@ -10,11 +10,11 @@ import com.example.futportuguese.R
 fun ImageView.tentaCarregarImagem(
     url: String? = null,
 
-    fallback: Int = R.drawable.placeholder_image
+    fallback: Int = R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s
 ) {
     load(url) {
         fallback(fallback)
         error(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s)
-        placeholder(R.drawable.placeholder)
+        placeholder(R.drawable.logomarca_para_um_aplicativo_que_marca_hor_rios_para_jogos_de_futebol_em_portgu_s)
     }
 }
