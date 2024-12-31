@@ -18,11 +18,11 @@ class JogosDao {
         private val jogos = mutableListOf<Jogos>(
             Jogos(
                 nomeDoOrganizador = "Nome do Organizador",
-                numeroParaContato = "88 993289275",
-                diaDaSemana = "Segunda-Feira",
-                horarioDoInicioDoJogo = "10:00",
-                horarioDoFimDoJogo = "20:00",
-                valorDoJogo = BigDecimal(100.00)
+                numeroParaContato = "Nùmero Para Contato",
+                diaDaSemana = "Dia do Jogo",
+                horarioDoInicioDoJogo = "Horário de Início da Partida",
+                horarioDoFimDoJogo = "Horário do Fim da Partida",
+                valorDoJogo = BigDecimal(0)
             )
         )
     }
