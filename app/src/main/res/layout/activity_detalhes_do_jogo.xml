@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.DetalhesDoJogoActivity">
+
+
+    <ImageView
+        android:id="@+id/activityDetalhesDoJogoImagem"
+        android:layout_width="410dp"
+        android:layout_height="173dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activityDetalhesDoJogoImagem"
+        app:layout_constraintVertical_bias="0.107"
+        tools:text="Exemplo de Nome Sactum" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoNumeroParaContato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoNome"
+        app:layout_constraintVertical_bias="0.073"
+        tools:text="Exemplo de Nome Sactum" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoDiaDaSemana"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoNumeroParaContato"
+        app:layout_constraintVertical_bias="0.08"
+        tools:text="Exemplo de Nome Sactum" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoHorarioDeInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoDiaDaSemana"
+        app:layout_constraintVertical_bias="0.067"
+        tools:text="Exemplo de Nome Sactum" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoHorarioDoFim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoHorarioDeInicio"
+        app:layout_constraintVertical_bias="0.095"
+        tools:text="Exemplo de Nome Sactum" />
+
+    <TextView
+        android:id="@+id/activityDetalhesDoJogoValor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoHorarioDoFim"
+        app:layout_constraintVertical_bias="0.137"
+        tools:text="Exemplo de Nome Sactum" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

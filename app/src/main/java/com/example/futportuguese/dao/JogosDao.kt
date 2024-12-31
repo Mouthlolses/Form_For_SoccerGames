@@ -11,24 +11,14 @@ class JogosDao {
 
 
     fun buscaTodos(): List<Jogos> {
-        return jogos.toList()
+        return jogos.filter { it.imagem != "Invalida" }.toList()
     }
 
     companion object {
         private val jogos = mutableListOf<Jogos>(
-            Jogos(
-                nomeDoOrganizador = "Nome do Organizador",
-                numeroParaContato = "Nùmero Para Contato",
-                diaDaSemana = "Dia do Jogo",
-                horarioDoInicioDoJogo = "Horário de Início da Partida",
-                horarioDoFimDoJogo = "Horário do Fim da Partida",
-                valorDoJogo = BigDecimal(0)
-            )
         )
     }
 }
-
-
 
 
 /*

@@ -47,6 +47,17 @@ class ListaJogosActivity : AppCompatActivity() {
     }
 
     private fun configuraRecyclerView() {
-        binding.activityListaJogosRecyclerview.adapter = adapter
+        val recyclerView =  binding.activityListaJogosRecyclerview
+        recyclerView.adapter = adapter
+
+        adapter.quandoClicaNoItem = {
+            val intent = Intent(
+                this,
+                DetalhesDoJogoActivity::class.java
+            ).apply {
+                putExtra(CHAVE_JOGOS, it)
+            }
+            startActivity(intent)
+        }
     }
 }

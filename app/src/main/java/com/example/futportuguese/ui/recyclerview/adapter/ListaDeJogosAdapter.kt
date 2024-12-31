@@ -2,57 +2,73 @@ package com.example.futportuguese.ui.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.futportuguese.databinding.JogoItemBinding
+import com.example.futportuguese.extensions.formataParaMoedaBrasileira
 import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
-import java.math.BigDecimal
-import java.text.NumberFormat
-import java.util.Locale
 
 class ListaDeJogosAdapter(
     private val context: Context,
-    jogos: List<Jogos>
+    jogos: List<Jogos>,
+
+    var quandoClicaNoItem: (jogo: Jogos) -> Unit = {}
 ) : RecyclerView.Adapter<ListaDeJogosAdapter.ViewHolder>() {
 
     private val jogos = jogos.toMutableList()
 
-    class ViewHolder(private val binding: JogoItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun vincula(jogos: Jogos) {
-            binding.jogoItemNomeDoOrganizador.text = jogos.nomeDoOrganizador
-            binding.jogoItemNumeroParaContato.text = jogos.numeroParaContato
-            binding.jogoItemDiaDoJogo.text = jogos.diaDaSemana
-            binding.jogoItemHorarioDoInicioDoJogo.text = jogos.horarioDoInicioDoJogo
-            binding.jogoItemHorarioDeFimDoJogo.text = jogos.horarioDoFimDoJogo
-            binding.jogoItemValorParaPagar.text = jogos.valorDoJogo.toPlainString()
-            val valorEmMoeda: String = formataParaMoedaBrasileira(jogos.valorDoJogo)
-            binding.jogoItemValorParaPagar.text = valorEmMoeda
+    inner class ViewHolder(private val binding: JogoItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
+        private lateinit var jogos: Jogos
 
-            /* val visibilidade = if(jogos.imagem != null) {     *Outro meio de implmentar o "Error" da imagem*
+        init {
+            // implementação do listener do adapter
+            itemView.setOnClickListener {
+                // verificação da existência de valores em property lateinit
+                if (::jogos.isInitialized) {
+                    quandoClicaNoItem(jogos)
+                }
+            }
+        }
+
+        fun vincula(jogo: Jogos) {
+            this.jogos = jogo
+            val nomeDoOrganizador = binding.jogoItemNomeDoOrganizador
+            nomeDoOrganizador.text = jogos.nomeDoOrganizador
+            val numeroParaContato = binding.jogoItemNumeroParaContato
+            numeroParaContato.text = jogos.numeroParaContato
+            val diaDoJogo = binding.jogoItemDiaDoJogo
+            diaDoJogo.text = jogos.diaDaSemana
+            val inicioDoJogo = binding.jogoItemHorarioDoInicioDoJogo
+            inicioDoJogo.text = jogos.horarioDoInicioDoJogo
+            val fimDoJogo = binding.jogoItemHorarioDeFimDoJogo
+            fimDoJogo.text = jogos.horarioDoFimDoJogo
+            val valor = binding.jogoItemValorParaPagar
+            val valorEmMoeda: String = jogos.valorDoJogo
+                .formataParaMoedaBrasileira()
+            valor.text = valorEmMoeda
+
+            val visibilidade = if (jogos.imagem != null) {
                 View.VISIBLE
             } else {
-                View.INVISIBLE
+                View.GONE
             }
+
             binding.imageView.visibility = visibilidade
-            */
 
 
             binding.imageView.tentaCarregarImagem(jogos.imagem)
         }
 
-        private fun formataParaMoedaBrasileira(jogos: BigDecimal): String {
-            val formatador: NumberFormat = NumberFormat
-                .getCurrencyInstance(Locale("pt", "br"))
-            val valorEmMoeda: String = formatador.format(jogos)
-            return valorEmMoeda
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = JogoItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        val inflater = LayoutInflater.from(context)
+        val binding = JogoItemBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
@@ -69,7 +85,6 @@ class ListaDeJogosAdapter(
         notifyDataSetChanged()
     }
 }
-
 
 
 /*
