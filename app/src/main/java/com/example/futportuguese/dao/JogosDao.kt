@@ -16,6 +16,24 @@ class JogosDao {
 
     companion object {
         private val jogos = mutableListOf<Jogos>(
+            Jogos(
+                imagem = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28rosto%29.jpg",
+                nomeDoOrganizador = "Luiz Inacio Lula da Silva",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "15:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("100")
+            ),
+            Jogos(
+                imagem = "https://s2-g1.glbimg.com/v852h9EH9JTPOAp4PJGxY1mJscs=/0x0:427x640/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/F/7/qkFYZGRuuqBkBNsSng3w/3.jpg",
+                nomeDoOrganizador = "Bolsonaro",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "15:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("100")
+            )
         )
     }
 }
