@@ -22,7 +22,7 @@ class JogosDao {
                 numeroParaContato = "88996278654",
                 diaDaSemana = "15/06/2020",
                 horarioDoInicioDoJogo = "15:00",
-                horarioDoFimDoJogo = "17:00",
+                horarioDoFimDoJogo = "15:00",
                 valorDoJogo = BigDecimal("100")
             ),
             Jogos(

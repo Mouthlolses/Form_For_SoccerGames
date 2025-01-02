@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/activityDetalhesDoJogoImagem"
-        android:layout_width="0dp"
+        android:layout_width="140dp"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
         android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +40,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +56,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,13 +72,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoDiaDaSemana"
-        app:layout_constraintVertical_bias="0.067"
+        app:layout_constraintVertical_bias="0.100"
         tools:text="Exemplo de Nome Sactum" />
 
     <TextView
@@ -80,13 +88,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoHorarioDeInicio"
-        app:layout_constraintVertical_bias="0.095"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoDiaDaSemana"
+        app:layout_constraintVertical_bias="0.100"
         tools:text="Exemplo de Nome Sactum" />
 
     <TextView
@@ -97,15 +107,21 @@
         android:background="@drawable/rounded_border"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
-        android:textSize="20sp"
         android:textColor="#06B80F"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/activityDetalhesDoJogoImagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoImagem"
-        app:layout_constraintVertical_bias="0.481"
         tools:text="Exemplo de Nome Sactum" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
