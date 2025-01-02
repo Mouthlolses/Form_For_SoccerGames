@@ -33,6 +33,42 @@ class JogosDao {
                 horarioDoInicioDoJogo = "15:00",
                 horarioDoFimDoJogo = "17:00",
                 valorDoJogo = BigDecimal("100")
+            ),
+            Jogos(
+                imagem = "https://i.pinimg.com/originals/14/d4/ff/14d4ff19f84c0cb768c21e473a875f88.jpg",
+                nomeDoOrganizador = "Justin Bieber",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "11:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("600")
+            ),
+            Jogos(
+                imagem = "https://s2-techtudo.glbimg.com/3zDRyac6Lja3dr33NiWF13lNXsE=/0x8:640x507/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/I/X/zUjzvvRZirgzcuyVA93w/43984903-290100898498205-95480952794328461-n.jpg",
+                nomeDoOrganizador = "Neymar Jr",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "11:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("1000")
+            ),
+            Jogos(
+                imagem = "https://upload.wikimedia.org/wikipedia/commons/e/e0/07.09.2024_-_Desfile_de_7_de_Setembro_%2853978379274%29_Alexandre_de_Moraes_3x4_portrait_crop.jpg",
+                nomeDoOrganizador = "Alexandre de Moraes",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "11:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("5000")
+            ),
+            Jogos(
+                imagem = "https://s2.glbimg.com/96P5iqE9v1ZnbHjczxDfKykB-2Y=/143x0:804x707/661x707/middle/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/M/w/KC40aUTQ6W9e66beoBXQ/elon-musk-etienne-laurent-afp-13-de-abril-de-2024.jpg",
+                nomeDoOrganizador = "Elon Musk",
+                numeroParaContato = "88996278654",
+                diaDaSemana = "15/06/2020",
+                horarioDoInicioDoJogo = "11:00",
+                horarioDoFimDoJogo = "17:00",
+                valorDoJogo = BigDecimal("10000")
             )
         )
     }
