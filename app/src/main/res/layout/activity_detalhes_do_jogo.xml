@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activityDetalhesDoJogoImagem"
         app:layout_constraintVertical_bias="0.107"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <TextView
         android:id="@+id/activityDetalhesDoJogoNumeroParaContato"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoNome"
         app:layout_constraintVertical_bias="0.073"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <TextView
         android:id="@+id/activityDetalhesDoJogoDiaDaSemana"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoNumeroParaContato"
         app:layout_constraintVertical_bias="0.08"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <TextView
         android:id="@+id/activityDetalhesDoJogoHorarioDeInicio"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoDiaDaSemana"
         app:layout_constraintVertical_bias="0.100"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <TextView
         android:id="@+id/activityDetalhesDoJogoHorarioDoFim"
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoDiaDaSemana"
         app:layout_constraintVertical_bias="0.100"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <TextView
         android:id="@+id/activityDetalhesDoJogoValor"
@@ -114,7 +114,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activityDetalhesDoJogoImagem"
-        tools:text="Exemplo de Nome Sactum" />
+        tools:text="Exemplo de Nome" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
