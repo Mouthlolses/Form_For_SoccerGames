@@ -4,6 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.math.BigDecimal
 
+
 @Parcelize
 data class Jogos(
     val nomeDoOrganizador: String,
