@@ -12,7 +12,7 @@ import com.example.futportuguese.model.Jogos
 
 class ListaDeJogosAdapter(
     private val context: Context,
-    jogos: List<Jogos>,
+    jogos: List<Jogos> = emptyList(),
 
     var quandoClicaNoItem: (jogo: Jogos) -> Unit = {}
 ) : RecyclerView.Adapter<ListaDeJogosAdapter.ViewHolder>() {

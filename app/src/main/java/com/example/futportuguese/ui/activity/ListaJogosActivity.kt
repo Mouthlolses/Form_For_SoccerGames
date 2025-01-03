@@ -8,16 +8,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
 import com.example.futportuguese.FormularioJogosActivity
-import com.example.futportuguese.dao.JogosDao
 import com.example.futportuguese.database.AppDatabase
 import com.example.futportuguese.databinding.ActivityListaDeJogosBinding
-import com.example.futportuguese.model.Jogos
 import com.example.futportuguese.ui.recyclerview.adapter.ListaDeJogosAdapter
-import java.math.BigDecimal
 
 class ListaJogosActivity : AppCompatActivity() {
-    private val dao = JogosDao()
-    private val adapter = ListaDeJogosAdapter(context = this, jogos = dao.buscaTodos())
+    private val adapter = ListaDeJogosAdapter(context = this)
     private lateinit var binding: ActivityListaDeJogosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,27 +24,6 @@ class ListaJogosActivity : AppCompatActivity() {
         configuraRecyclerView()
         configuraFab()
 
-
-        val db = Room.databaseBuilder(
-            this,
-            AppDatabase::class.java,
-            "futPortuguese.db"
-        ).allowMainThreadQueries()
-            .build()
-
-        val jogosDao = db.jogosDao()
-        jogosDao.salva(
-            Jogos(
-                nomeDoOrganizador = "Zeca",
-                numeroParaContato = "8866754683",
-                diaDaSemana = "15/12/12",
-                horarioDoInicioDoJogo = "17:00",
-                horarioDoFimDoJogo = "18:00",
-                valorDoJogo = BigDecimal("500"),
-            )
-        )
-        adapter.atualiza(jogosDao.buscaTodos())
-
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -58,7 +33,9 @@ class ListaJogosActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-//        adapter.atualiza(dao.buscaTodos())
+        val db = AppDatabase.instancia(this)    //Chamando a instancia do Banco de Dados
+        val jogosDao = db.jogosDao()
+        adapter.atualiza(jogosDao.buscaTodos())
     }
 
     private fun configuraFab() {

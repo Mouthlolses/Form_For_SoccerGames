@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.futportuguese.dao.JogosDao
+import com.example.futportuguese.database.AppDatabase
 import com.example.futportuguese.databinding.ActivityFormularioJogosBinding
 import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
@@ -40,41 +40,45 @@ class FormularioJogosActivity : AppCompatActivity() {
         configuraBotaoSalvar()
     }
 
+    //Configurei o botao salvar com o banco de dados
     private fun configuraBotaoSalvar() {
-        binding.activityFormularioJogoBotaoSalvar.setOnClickListener {
-            val jogoCriado = criaProduto()
-            val dao = JogosDao()
-            dao.adiciona(jogoCriado)
-            finish()
-        }
-    }
-
-    private fun criaProduto(): Jogos {
-        val nomeDoOrganizador =
-            binding.formularioJogoTextinputlayoutNomeDoOrganizador.editText?.text.toString()
-        val numeroParaContato =
-            binding.formularioJogoTextinputlayoutNumeroParaContato.editText?.text.toString()
-        val dataDoJogo = binding.formularioJogoTextinputlayoutDataDoJogo.editText?.text.toString()
-        val horarioDeInicioDoJogo =
-            binding.formularioJogoTextinputlayoutHorarioDeInicioDoJogo.editText?.text.toString()
-        val horarioDoFimDoJogo =
-            binding.formularioJogoTextinputlayoutHorarioDeTerminoDoJogo.editText?.text.toString()
-        val valorAPagarEmTexto =
-            binding.formularioJogoTextinputlayoutValorAPagar.editText?.text.toString()
-        val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
-            BigDecimal.ZERO
-        } else {
-            BigDecimal(valorAPagarEmTexto)
+        val botaoSalvar = binding.activityFormularioJogoBotaoSalvar
+        val db = AppDatabase.instancia(this)
+        val jogosDao = db.jogosDao()
+            botaoSalvar.setOnClickListener {
+                val jogoNovo = criaProduto()
+                jogosDao.salva(jogoNovo)
+                finish()
+            }
         }
 
-        return Jogos(
-            nomeDoOrganizador = nomeDoOrganizador,
-            numeroParaContato = numeroParaContato,
-            diaDaSemana = dataDoJogo,
-            horarioDoInicioDoJogo = horarioDeInicioDoJogo,
-            horarioDoFimDoJogo = horarioDoFimDoJogo,
-            valorDoJogo = valorAPagar,
-            imagem = url
-        )
+        private fun criaProduto(): Jogos {
+            val nomeDoOrganizador =
+                binding.formularioJogoTextinputlayoutNomeDoOrganizador.editText?.text.toString()
+            val numeroParaContato =
+                binding.formularioJogoTextinputlayoutNumeroParaContato.editText?.text.toString()
+            val dataDoJogo =
+                binding.formularioJogoTextinputlayoutDataDoJogo.editText?.text.toString()
+            val horarioDeInicioDoJogo =
+                binding.formularioJogoTextinputlayoutHorarioDeInicioDoJogo.editText?.text.toString()
+            val horarioDoFimDoJogo =
+                binding.formularioJogoTextinputlayoutHorarioDeTerminoDoJogo.editText?.text.toString()
+            val valorAPagarEmTexto =
+                binding.formularioJogoTextinputlayoutValorAPagar.editText?.text.toString()
+            val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
+                BigDecimal.ZERO
+            } else {
+                BigDecimal(valorAPagarEmTexto)
+            }
+
+            return Jogos(
+                nomeDoOrganizador = nomeDoOrganizador,
+                numeroParaContato = numeroParaContato,
+                diaDaSemana = dataDoJogo,
+                horarioDoInicioDoJogo = horarioDeInicioDoJogo,
+                horarioDoFimDoJogo = horarioDoFimDoJogo,
+                valorDoJogo = valorAPagar,
+                imagem = url
+            )
+        }
     }
-}
