@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -55,8 +56,8 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     implementation(libs.androidx.room.compiler.v252)
+    ksp(libs.androidx.room.compiler.v252)
     testImplementation(libs.junit)
-    annotationProcessor(libs.androidx.room.compiler.v252)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
