@@ -55,7 +55,6 @@ dependencies {
     implementation(libs.kotlin.parcelize.runtime)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    implementation(libs.androidx.room.compiler.v252)
     ksp(libs.androidx.room.compiler.v252)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
