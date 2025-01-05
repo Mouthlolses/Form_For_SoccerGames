@@ -5,6 +5,7 @@ import java.math.BigDecimal
 
 class Converter {
 
+    //Converter do valor em BigDecimal para Double pois o SQLite não reconhece valores em "BigDecimal"
     @TypeConverter
     fun deDouble(valor: Double?): BigDecimal {
         return valor?.let { BigDecimal(valor.toString()) } ?: BigDecimal.ZERO

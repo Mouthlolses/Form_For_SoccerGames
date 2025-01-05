@@ -45,40 +45,40 @@ class FormularioJogosActivity : AppCompatActivity() {
         val botaoSalvar = binding.activityFormularioJogoBotaoSalvar
         val db = AppDatabase.instancia(this)
         val jogosDao = db.jogosDao()
-            botaoSalvar.setOnClickListener {
-                val jogoNovo = criaProduto()
-                jogosDao.salva(jogoNovo)
-                finish()
-            }
-        }
-
-        private fun criaProduto(): Jogos {
-            val nomeDoOrganizador =
-                binding.formularioJogoTextinputlayoutNomeDoOrganizador.editText?.text.toString()
-            val numeroParaContato =
-                binding.formularioJogoTextinputlayoutNumeroParaContato.editText?.text.toString()
-            val dataDoJogo =
-                binding.formularioJogoTextinputlayoutDataDoJogo.editText?.text.toString()
-            val horarioDeInicioDoJogo =
-                binding.formularioJogoTextinputlayoutHorarioDeInicioDoJogo.editText?.text.toString()
-            val horarioDoFimDoJogo =
-                binding.formularioJogoTextinputlayoutHorarioDeTerminoDoJogo.editText?.text.toString()
-            val valorAPagarEmTexto =
-                binding.formularioJogoTextinputlayoutValorAPagar.editText?.text.toString()
-            val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
-                BigDecimal.ZERO
-            } else {
-                BigDecimal(valorAPagarEmTexto)
-            }
-
-            return Jogos(
-                nomeDoOrganizador = nomeDoOrganizador,
-                numeroParaContato = numeroParaContato,
-                diaDaSemana = dataDoJogo,
-                horarioDoInicioDoJogo = horarioDeInicioDoJogo,
-                horarioDoFimDoJogo = horarioDoFimDoJogo,
-                valorDoJogo = valorAPagar,
-                imagem = url
-            )
+        botaoSalvar.setOnClickListener {
+            val jogoNovo = criaProduto()
+            jogosDao.salva(jogoNovo)
+            finish()
         }
     }
+
+    private fun criaProduto(): Jogos {
+        val nomeDoOrganizador =
+            binding.formularioJogoTextinputlayoutNomeDoOrganizador.editText?.text.toString()
+        val numeroParaContato =
+            binding.formularioJogoTextinputlayoutNumeroParaContato.editText?.text.toString()
+        val dataDoJogo =
+            binding.formularioJogoTextinputlayoutDataDoJogo.editText?.text.toString()
+        val horarioDeInicioDoJogo =
+            binding.formularioJogoTextinputlayoutHorarioDeInicioDoJogo.editText?.text.toString()
+        val horarioDoFimDoJogo =
+            binding.formularioJogoTextinputlayoutHorarioDeTerminoDoJogo.editText?.text.toString()
+        val valorAPagarEmTexto =
+            binding.formularioJogoTextinputlayoutValorAPagar.editText?.text.toString()
+        val valorAPagar = if (valorAPagarEmTexto.isBlank()) {
+            BigDecimal.ZERO
+        } else {
+            BigDecimal(valorAPagarEmTexto)
+        }
+
+        return Jogos(
+            nomeDoOrganizador = nomeDoOrganizador,
+            numeroParaContato = numeroParaContato,
+            diaDaSemana = dataDoJogo,
+            horarioDoInicioDoJogo = horarioDeInicioDoJogo,
+            horarioDoFimDoJogo = horarioDoFimDoJogo,
+            valorDoJogo = valorAPagar,
+            imagem = url
+        )
+    }
+}
