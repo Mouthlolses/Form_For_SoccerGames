@@ -6,7 +6,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.room.Room
 import com.example.futportuguese.FormularioJogosActivity
 import com.example.futportuguese.database.AppDatabase
 import com.example.futportuguese.databinding.ActivityListaDeJogosBinding
