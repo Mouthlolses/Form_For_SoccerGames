@@ -9,7 +9,7 @@ import com.example.futportuguese.database.converter.Converter
 import com.example.futportuguese.database.dao.JogosDao
 import com.example.futportuguese.model.Jogos
 
-@Database(entities = [Jogos::class], version = 1)
+@Database(entities = [Jogos::class], version = 1, exportSchema = false)
 @TypeConverters(Converter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun jogosDao(): JogosDao

@@ -19,7 +19,6 @@ class ListaJogosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListaDeJogosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        enableEdgeToEdge()
         configuraRecyclerView()
         configuraFab()
 

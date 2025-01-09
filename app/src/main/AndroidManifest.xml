@@ -13,11 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FutPortuguese">
         <activity
-            android:name=".ui.activity.ConstantesActivities"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.DetalhesDoJogoActivity"
-            android:exported="false" />
+            android:name=".ui.activity.DetalhesDoJogoActivity"/>
         <activity
             android:name=".ui.activity.ListaJogosActivity"
             android:exported="true">
