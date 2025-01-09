@@ -17,9 +17,15 @@ import com.example.futportuguese.model.Jogos
 
 class DetalhesDoJogoActivity : AppCompatActivity() {
 
-    private lateinit var jogo: Jogos
+    private var produtoId: Long? = null
+    private var jogo: Jogos? = null
     private val binding by lazy {
         ActivityDetalhesDoJogoBinding.inflate(layoutInflater)
+    }
+
+
+    private val jogosDao by lazy {
+        AppDatabase.instancia(this).jogosDao()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +39,16 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        produtoId?.let { id ->
+            jogo = jogosDao.buscaPorId(id)
+        }
+        jogo?.let {
+            preencheCampos(it)
+        } ?: finish()
+    }
+
     //Menu de Opções
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detalhes_jogo, menu)
@@ -41,20 +57,16 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
 
     //Configurando Listener para menu de detalhes com as funções remover e editar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (::jogo.isInitialized) {
-            val db = AppDatabase.instancia(this)
-            val jogosDao = db.jogosDao()
-            when (item.itemId) {
-                R.id.menu_detalhes_jogo_remover -> {
-                    jogosDao.remove(jogo)
-                    finish()
-                }
+        when (item.itemId) {
+            R.id.menu_detalhes_jogo_remover -> {
+                jogo?.let { jogosDao.remove(it) }
+                finish()
+            }
 
-                R.id.menu_detalhes_jogo_editar -> {
-                    Intent(this, FormularioJogosActivity::class.java).apply {
-                        putExtra(CHAVE_JOGOS, jogo)
-                        startActivity(this)
-                    }
+            R.id.menu_detalhes_jogo_editar -> {
+                Intent(this, FormularioJogosActivity::class.java).apply {
+                    putExtra(CHAVE_JOGOS, jogo)
+                    startActivity(this)
                 }
             }
         }
@@ -63,8 +75,7 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
 
     private fun tentaCarregarJogo() {
         intent.getParcelableExtra<Jogos>(CHAVE_JOGOS)?.let { jogoCarregado ->
-            jogo = jogoCarregado
-            preencheCampos(jogoCarregado)
+            produtoId = jogoCarregado.id
         } ?: finish()
     }
 

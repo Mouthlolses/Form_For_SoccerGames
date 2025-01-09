@@ -12,7 +12,7 @@ import com.example.futportuguese.model.Jogos
 interface JogosDao {
 
     @Query("SELECT * FROM Jogos")
-    fun buscaTodos() : List<Jogos>
+    fun buscaTodos(): List<Jogos>
 
     @Insert
     fun salva(vararg jogos: Jogos)
@@ -22,6 +22,9 @@ interface JogosDao {
 
     @Update
     fun atualiza(vararg jogos: Jogos)
+
+    @Query("SELECT * FROM Jogos WHERE id = :id")
+    fun buscaPorId(id: Long) : Jogos?
 }
 
 
