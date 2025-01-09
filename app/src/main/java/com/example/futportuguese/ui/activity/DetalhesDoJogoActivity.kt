@@ -22,7 +22,6 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
         ActivityDetalhesDoJogoBinding.inflate(layoutInflater)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

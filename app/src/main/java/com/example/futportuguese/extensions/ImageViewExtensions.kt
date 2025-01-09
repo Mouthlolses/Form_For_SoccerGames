@@ -7,6 +7,7 @@ import coil3.request.fallback
 import coil3.request.placeholder
 import com.example.futportuguese.R
 
+//Imagens para funções de load(carregamento)
 fun ImageView.tentaCarregarImagem(
     url: String? = null,
 

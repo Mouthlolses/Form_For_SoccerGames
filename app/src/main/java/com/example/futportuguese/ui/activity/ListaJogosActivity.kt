@@ -28,9 +28,10 @@ class ListaJogosActivity : AppCompatActivity() {
         }
     }
 
+    //Chamando a instancia do Banco de Dados através do OnResume
     override fun onResume() {
         super.onResume()
-        val db = AppDatabase.instancia(this)    //Chamando a instancia do Banco de Dados
+        val db = AppDatabase.instancia(this)
         val jogosDao = db.jogosDao()
         adapter.atualiza(jogosDao.buscaTodos())
     }

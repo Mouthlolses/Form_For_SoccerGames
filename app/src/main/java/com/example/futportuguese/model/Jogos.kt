@@ -7,6 +7,8 @@ import kotlinx.parcelize.Parcelize
 import java.math.BigDecimal
 
 
+//Entity para criar banco de dados
+//Parcelize para Serialização de objeto, assim consigo enviar objetos entre componentes do sistema(Activies, Fragments)
 @Entity
 @Parcelize
 data class Jogos(
