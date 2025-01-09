@@ -6,4 +6,10 @@
         android:icon="@drawable/ic_action_editar"
         android:title="Editar"
         app:showAsAction="ifRoom" />
+
+
+    <item android:id="@+id/menu_detalhes_jogo_remover"
+        android:icon="@drawable/ic_action_deletar"
+        android:title="como_remover"
+        app:showAsAction="ifRoom"/>
 </menu>

@@ -1,7 +1,6 @@
 package com.example.futportuguese
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -9,6 +8,7 @@ import com.example.futportuguese.database.AppDatabase
 import com.example.futportuguese.databinding.ActivityFormularioJogosBinding
 import com.example.futportuguese.extensions.tentaCarregarImagem
 import com.example.futportuguese.model.Jogos
+import com.example.futportuguese.ui.activity.CHAVE_JOGOS
 import com.example.futportuguese.ui.dialog.FormularioImagemDialog
 import java.math.BigDecimal
 
@@ -17,6 +17,7 @@ class FormularioJogosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormularioJogosBinding
 
     private var url: String? = null
+    private var idJogo = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,25 @@ class FormularioJogosActivity : AppCompatActivity() {
                     url = imagem
                     binding.activityFormularioJogoImagem.tentaCarregarImagem(url)
                 }
+        }
+        intent.getParcelableExtra<Jogos>(CHAVE_JOGOS)?.let { jogoCarregado ->
+            title = "Alterar Jogo"
+            idJogo = jogoCarregado.id
+            url = jogoCarregado.imagem
+            binding.activityFormularioJogoImagem
+                .tentaCarregarImagem(jogoCarregado.imagem)
+            binding.formularioJogoTextinputEditTextNomeDoOrganizador
+                .setText(jogoCarregado.nomeDoOrganizador)
+            binding.formularioJogoTextinputEditTextNumeroParaContato
+                .setText(jogoCarregado.numeroParaContato)
+            binding.dataDoJogoTextInputLayout
+                .setText(jogoCarregado.diaDaSemana)
+            binding.horarioDeInicioTextInputLayout
+                .setText(jogoCarregado.horarioDoInicioDoJogo)
+            binding.horarioDoTerminoTextInputLayout
+                .setText(jogoCarregado.horarioDoFimDoJogo)
+            binding.valorAPagarTextInputLayout
+                .setText(jogoCarregado.valorDoJogo.toPlainString())
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -46,7 +66,11 @@ class FormularioJogosActivity : AppCompatActivity() {
         val jogosDao = db.jogosDao()
         botaoSalvar.setOnClickListener {
             val jogoNovo = criaProduto()
-            jogosDao.salva(jogoNovo)
+            if (idJogo > 0) {
+                jogosDao.atualiza(jogoNovo)
+            } else {
+                jogosDao.salva(jogoNovo)
+            }
             finish()
         }
     }
@@ -71,6 +95,7 @@ class FormularioJogosActivity : AppCompatActivity() {
         }
 
         return Jogos(
+            id = idJogo,
             nomeDoOrganizador = nomeDoOrganizador,
             numeroParaContato = numeroParaContato,
             diaDaSemana = dataDoJogo,

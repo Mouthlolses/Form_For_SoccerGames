@@ -33,6 +33,7 @@
             app:layout_constraintTop_toBottomOf="@id/activity_formulario_jogo_imagem">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formulario_jogo_textinputEditTextNomeDoOrganizador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nome do Organizador"
@@ -50,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_nomeDoOrganizador">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formulario_jogo_textinputEditTextNumeroParaContato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Número Para Contato"
@@ -67,6 +69,7 @@
             app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_numeroParaContato">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/data_do_jogo_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Data do Jogo"
@@ -86,6 +89,7 @@
             app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_dataDoJogo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/horario_de_inicio_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Hora do Inicio"
@@ -104,6 +108,7 @@
             app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_dataDoJogo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/horario_do_termino_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Hora do Término"
@@ -121,6 +126,7 @@
             app:layout_constraintTop_toBottomOf="@id/formulario_jogo_textinputlayout_horarioDeTerminoDoJogo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valor_a_pagar_textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Valor a Pagar"

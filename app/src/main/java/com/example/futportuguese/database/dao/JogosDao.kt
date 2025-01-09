@@ -1,8 +1,10 @@
 package com.example.futportuguese.database.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.futportuguese.model.Jogos
 
 
@@ -14,6 +16,12 @@ interface JogosDao {
 
     @Insert
     fun salva(vararg jogos: Jogos)
+
+    @Delete
+    fun remove(vararg jogos: Jogos)
+
+    @Update
+    fun atualiza(vararg jogos: Jogos)
 }
 
 
