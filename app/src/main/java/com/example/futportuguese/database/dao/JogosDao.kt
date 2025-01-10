@@ -23,6 +23,7 @@ interface JogosDao {
     @Update
     fun atualiza(vararg jogos: Jogos)
 
+    //Função no app que Busca a lista em questão pelo Id para assim poder editar
     @Query("SELECT * FROM Jogos WHERE id = :id")
     fun buscaPorId(id: Long) : Jogos?
 }
