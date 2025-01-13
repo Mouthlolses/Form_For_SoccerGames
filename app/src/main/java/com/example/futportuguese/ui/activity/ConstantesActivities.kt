@@ -5,4 +5,4 @@ package com.example.futportuguese.ui.activity
 
 //Define uma constante chamada CHAVE_JOGOS que pode ser usada de forma global
 //para identificiar valores relacionados a jogos".
-const val CHAVE_JOGOS = "jogos"
+const val CHAVE_JOGOS_ID: String = "JOGOS_ID"

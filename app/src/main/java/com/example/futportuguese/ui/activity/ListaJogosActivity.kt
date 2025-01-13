@@ -56,7 +56,7 @@ class ListaJogosActivity : AppCompatActivity() {
                 this,
                 DetalhesDoJogoActivity::class.java
             ).apply {
-                putExtra(CHAVE_JOGOS, it)
+                putExtra(CHAVE_JOGOS_ID, it.id)
             }
             startActivity(intent)
         }

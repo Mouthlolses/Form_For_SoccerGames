@@ -17,7 +17,7 @@ import com.example.futportuguese.model.Jogos
 
 class DetalhesDoJogoActivity : AppCompatActivity() {
 
-    private var produtoId: Long? = null
+    private var jogoId: Long = 0L
     private var jogo: Jogos? = null
     private val binding by lazy {
         ActivityDetalhesDoJogoBinding.inflate(layoutInflater)
@@ -39,11 +39,15 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onResume() {
         super.onResume()
-        produtoId?.let { id ->
-            jogo = jogosDao.buscaPorId(id)
-        }
+        buscaJogo()
+    }
+
+
+    private fun buscaJogo() {
+        jogo = jogosDao.buscaPorId(jogoId)
         jogo?.let {
             preencheCampos(it)
         } ?: finish()
@@ -65,7 +69,7 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
 
             R.id.menu_detalhes_jogo_editar -> {
                 Intent(this, FormularioJogosActivity::class.java).apply {
-                    putExtra(CHAVE_JOGOS, jogo)
+                    putExtra(CHAVE_JOGOS_ID, jogoId)
                     startActivity(this)
                 }
             }
@@ -74,9 +78,7 @@ class DetalhesDoJogoActivity : AppCompatActivity() {
     }
 
     private fun tentaCarregarJogo() {
-        intent.getParcelableExtra<Jogos>(CHAVE_JOGOS)?.let { jogoCarregado ->
-            produtoId = jogoCarregado.id
-        } ?: finish()
+        jogoId = intent.getLongExtra(CHAVE_JOGOS_ID, 0L)
     }
 
     private fun preencheCampos(jogoCarregado: Jogos) {
