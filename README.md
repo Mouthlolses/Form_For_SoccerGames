@@ -2,6 +2,14 @@
 
 Este é um aplicativo Android desenvolvido para gerenciar jogos de campo society. O projeto inclui funcionalidades que permitem criar, visualizar, editar e excluir informações sobre jogos e jogadores de forma prática e intuitiva.
 
+<p>
+  <img src="Screenshot_20250123_170934.png" width="300" style="display:inline-block; margin-right: 10px;" />
+  <img src="Screenshot_20250123_171010.png" width="300" style="display:inline-block; margin-right: 10px;" />
+  <img src="Screenshot_20250123_171122.png" width="300" style="display:inline-block; margin-right: 10px" />
+    <img src="Screenshot_20250123_171145.png" width="300" style="display:inline-block; margin-right: 10px" />
+    <img src="Screenshot_20250123_171255.png" width="300" style="display:inline-block; margin-right: 10px" />
+    <img src="Screenshot_20250123_171344.png" width="300" style="display:inline-block; margin-right: 10px" />
+</p>
 _______________________________________________________________
 
 # Funcionalidades
