@@ -14,7 +14,7 @@ _______________________________________________________________
 
 # Funcionalidades
 
-* Cadastro de jogos: Utilize um formulário dedicado em uma nova activity para criar e salvar os detalhes dos jogos.
+* Cadastro de jogos: Utiliza um formulário dedicado em uma nova activity para criar e salvar os detalhes dos jogos.
 
 * Visualização de jogos: Os jogos salvos são exibidos em formato de tabela, utilizando uma RecyclerView para exibição dinâmica e eficiente.
 
@@ -42,7 +42,7 @@ ________________________________________________________________
 
 * Componentes principais: RecyclerView, Floating Action Button, Activities
 
-* Arquitetura: Seguiu boas práticas de desenvolvimento Android para modularidade e manutenção.
+* Arquitetura: Segui boas práticas de desenvolvimento Android para modularidade e manutenção.
 
 ________________________________________________________________
 
