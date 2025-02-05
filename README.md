@@ -1,6 +1,8 @@
 # Gerenciador de Jogos de Campo Society
 
-Este é um aplicativo Android desenvolvido para gerenciar jogos de campo society. O projeto inclui funcionalidades que permitem criar, visualizar, editar e excluir informações sobre jogos e jogadores de forma prática e intuitiva.
+### Este é um aplicativo Android desenvolvido para gerenciar jogos de campo society. O projeto inclui funcionalidades que permitem criar, visualizar, editar e excluir informações sobre jogos e jogadores de forma prática e intuitiva.
+
+### Para ter acesso ao aplicativo , pode baixa-lo nesse link(Lembre-se de habilitar a opção chamada "Instalar aplicativos de fontes desconhecidas ou Fontes desconhecidas") > https://drive.google.com/file/d/1PacAkUk-Ll4LgFwWluTQtnshoTImzb3Y/view?usp=sharing
 
 <p>
   <img src="Screenshot_20250123_170934.png" width="300" style="display:inline-block; margin-right: 10px;" />
