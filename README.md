@@ -1,5 +1,7 @@
+[EN]
 # Soccer Field Game Manager - futPortuguese
 
+[PT]
 # Gerenciador de Jogos de Campo Society - futPortguese
 
 [EN]
