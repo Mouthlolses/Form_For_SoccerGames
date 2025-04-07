@@ -8,4 +8,10 @@
     <string name="data_do_jogo">Data do Jogo</string>
     <string name="numero_para_contato">Número Para Contato</string>
     <string name="nome_do_organizador">Nome do Organizador</string>
+    <string name="user">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar_usu_rio">Cadastrar Usuário</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="nome">Nome</string>
 </resources>
