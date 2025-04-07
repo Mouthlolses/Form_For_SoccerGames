@@ -13,4 +13,10 @@
         <item name="android:statusBarColor">#FF5722</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Estilo pro hint do TextInputLayout -->
+    <style name="HintText" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">#1E88E5</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>
