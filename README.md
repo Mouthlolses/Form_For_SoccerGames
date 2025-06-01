@@ -18,12 +18,12 @@ https://drive.google.com/file/d/1PacAkUk-Ll4LgFwWluTQtnshoTImzb3Y/view?usp=shari
 ### Para ter acesso ao aplicativo , pode baixa-lo nesse link(Lembre-se de habilitar a opção chamada "Instalar aplicativos de fontes desconhecidas ou Fontes desconhecidas") > https://drive.google.com/file/d/1PacAkUk-Ll4LgFwWluTQtnshoTImzb3Y/view?usp=sharing
 
 <p>
-  <img src="Screenshot_20250123_170934.png" width="300" style="display:inline-block; margin-right: 10px;" />
-  <img src="Screenshot_20250123_171010.png" width="300" style="display:inline-block; margin-right: 10px;" />
+  <img src="Screenshot_20250123_170934.png" width="300" style="display:inline-block; margin-right: 10px;"/>
+  <img src="Screenshot_20250123_171010.png" width="300" style="display:inline-block; margin-right: 10px;"/>
   <img src="Screenshot_20250123_171122.png" width="300" style="display:inline-block; margin-right: 10px" />
-    <img src="Screenshot_20250123_171145.png" width="300" style="display:inline-block; margin-right: 10px" />
-    <img src="Screenshot_20250123_171255.png" width="300" style="display:inline-block; margin-right: 10px" />
-    <img src="Screenshot_20250123_171344.png" width="300" style="display:inline-block; margin-right: 10px" />
+  <img src="Screenshot_20250123_171145.png" width="300" style="display:inline-block; margin-right: 10px" />
+  <img src="Screenshot_20250123_171255.png" width="300" style="display:inline-block; margin-right: 10px" />
+  <img src="Screenshot_20250123_171344.png" width="300" style="display:inline-block; margin-right: 10px" />
 </p>
 _______________________________________________________________
 
