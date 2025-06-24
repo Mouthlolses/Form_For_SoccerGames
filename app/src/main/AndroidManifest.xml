@@ -27,10 +27,10 @@
         <activity android:name=".ui.activity.DetalhesDoJogoActivity" />
         <activity
             android:name=".ui.activity.ListaJogosActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".FormularioJogosActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"
