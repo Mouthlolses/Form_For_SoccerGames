@@ -2,7 +2,7 @@
 # Soccer Field Game Manager - futPortuguese
 
 [PT]
-# Gerenciador de Jogos de Campo Society - futPortguese
+# Gerenciador de Jogos de Campo Society - futPortuguese
 
 [EN]
 ### This is an Android app developed to manage soccer field games. The project includes features that allow users to create, view, edit, and delete information about games and players in a practical and intuitive way.
